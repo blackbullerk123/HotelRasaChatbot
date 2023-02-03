@@ -90,122 +90,216 @@ nlu:
       - am I talking to a bot?
       - am I talking to a human?
 
-  - intent: book_rooms
+  # - intent: book_rooms
+  #   examples: |
+  #     - ...
+  - intent: hotel_introduction
     examples: |
-      - ...
+      - I want to know about your hotel
+      - can you introduce about your hotel?
+      - Tell me something about your hotel
+      - what is hotel name?
 
   - intent: ask_availability
     examples: |
-      - ...
+      - I need a room for tonight.
+      - I want to stay at your hotel next week.
+      - Do you have rooms available for the weekend?
+      - Can we stay at your hotel with 10 people?
+      - 1: [Single Room]{"entity" : "room_type", "role" : "single_room"} 
+      - 2: [Double Room]{"entity": "room_type", "role": "double_room"}
+      - 1: [Single Room](room_type)
+      - 2: [Double Room](room_type)
 
   - intent: ask_room_type
     examples: |
-      - ...
+      - Can you recommend some type of rooms?
+      - I want to see list of room types
+      - How many types of room does your hotel have?
+      - Give me the list of room types
 
-  - intent: ask_view
-    examples: |
-      - ...
+  # - intent: enter_data
+  #   examples: |
+  #     - single room
+  #     - Double Rooms
+  # - intent: ask_view
+  #   examples: |
+  #     - ...
 
   - intent: ask_room_preview
     examples: |
-      - ...
+      - Let me see your room 
+      - Let me watch your room 
+      - Let me preview your room
+      - Can I see the room template?
+      - Can I check the room template?
+      - Can I preview the room template?
+      - I want to see your room
+      - I need to watch your room
 
   - intent: ask_room_direction
     examples: |
-      - ...
+      - Can you give me your hotel map?
+      - How can I get to that room?
+      - Where is the room?
+      - Could you tell us how to get to that room?
+      - How do I find this room?
+      - Which is the best way to this room?
 
-  - intent: ask_floor
-    examples: |
-      - ...
+  # - intent: ask_floor
+  #   examples: |
+  #     - ...
 
-  - intent: ask_guest_nums
-    examples: |
-      - ...
+  # - intent: ask_guest_nums
+  #   examples: |
+  #     - ...
 
-  - intent: ask_room_nums
-    examples: |
-      - ...
+  # - intent: ask_room_nums
+  #   examples: |
+  #     - ...
 
-  - intent: ask_time_checkout
-    examples: |
-      - ...
+  # - intent: ask_time_checkout
+  #   examples: |
+  #     - ...
 
-  - intent: hold_luggage
-    examples: |
-      - ...
+  # - intent: hold_luggage
+  #   examples: |
+  #     - ...
 
   - intent: get_to_hotel
     examples: |
-      - ...
-
-  - intent: ask_availability
-    examples: |
-      - ...
+      - Can you send me your hotel address?
+      - How can I get to that hotel?
+      - Where is the hotel?
+      - Could you tell us how to get to that hotel?
+      - How do I find this hotel?
+      - Which is the best way to this hotel?
+      - What is your hotel location?
 
   - intent: ask_for_meal
     examples: |
-      - ...
+      - Do you have complimentary [breakfast]{"entity":"meal", "role":"breakfast"}?
+      - Is the [breakfast]{"entity":"meal", "role":"breakfast"} included in the room price?
+      - How much does the [breakfast]{"entity":"meal", "role":"breakfast"} cost?
+      - Is [breakfast]{"entity":"meal", "role":"breakfast"} included?
+      - What does the [breakfast]{"entity":"meal", "role":"breakfast"} cost
+      - Is [breakfast]{"entity":"meal", "role":"breakfast"} free
+      - What is the price for [breakfast]{"entity":"meal", "role":"breakfast"}
+      - How much is [breakfast]{"entity":"meal", "role":"breakfast"}
+      - Does the hotel offer [breakfast]{"entity":"meal", "role":"breakfast"}?
 
-  - intent: ask_restaurant
+  - intent: ask_for_meal_timing
     examples: |
-      - ...
+      - What are the breakfast timings?
+      - can you tell me the breakfast timings?
+      - breakfast timings
 
-  - intent: ask_shop
-    examples: |
-      - ...
+  # - intent: ask_restaurant
+  #   examples: |
+  #     - ...
 
-  - intent: ask_attraction
-    examples: |
-      - ...
+  # - intent: ask_shop
+  #   examples: |
+  #     - ...
 
-  - intent: ask_entertainment
-    examples: |
-      - ...
+  # - intent: ask_attraction
+  #   examples: |
+  #     - ...
 
-  - intent: ask_retreatment
-    examples: |
-      - ...
+  # - intent: ask_entertainment
+  #   examples: |
+  #     - ...
+
+  # - intent: ask_retreatment
+  #   examples: |
+  #     - ...
 
   - intent: ask_pickup
     examples: |
-      - ...
+      - Can you pick me up to your hotel?
+      - Can you arrange a transportation for us?
 
   - intent: confirm
     examples: |
-      - ...
+      - Send the confirmation by [sms]{"entity": "contact_channel"}
+      - confirm by [text]{"entity": "contact_channel"}
+      - Please, send me the details by [SMS]{"entity": "contact_channel"}
+      - answer by [sms]{"entity": "contact_channel"}
+      - [SMS]{"entity": "contact_channel"} confirmation
+      - send a [text message]{"entity": "contact_channel"}
+      - Could you send me the booking details by [SMS]{"entity": "contact_channel"}?
 
   - intent: ask_price
     examples: |
-      - ...
+      - How much is a single room per night
+      - What are your standard room prices
+      - How much does a double room cost
+      - How much does a single room cost per night
+      - price for a double room
+      - price for a single room
+      - price per night
+      - how much do you charge per night
+      - what is the price per night?
 
   - intent: ask_voucher
     examples: |
-      - ...
+      - I want to use my voucher
+      - Can I use my voucher
+      - I have a voucher
 
-  - intent: ask_payment
+  # - intent: ask_payment
+  #   examples: |
+  #     - ...
+
+  # - intent: ask_billing
+  #   examples: |
+  #     - ...
+
+  - intent: checkin_now
     examples: |
-      - ...
+      - I want to checkin right now
+
+  - intent: checkout_now
+    examples: |
+      - I want to checkout right now
+
+  - intent: check_out_timings
+    examples: |
+      - What are your check-out timings?
+      - can you tell me the check-out timings?
+      - check-out timings
+
+  - intent: check_in_timings
+    examples: |
+      - What are your check-in timings?
+      - can you tell me the check-in timings?
+      - check-in timings
+
+  - intent: cancellation_policy
+    examples: |
+      - What is your cancellation policy?
+      - cancellation policy?
+      - cancellation policy
 
   - intent: ask_cancelling
     examples: |
-      - ...
+      - How do I cancel a reservation?
+      - can i cancel a reservation?
+      - cancel a reservation
 
   - intent: ask_refund
     examples: |
-      - ...
+      - can i get refund after cancel my reservation?
+      - what about refund?
 
   - intent: ask_changing_reservation
     examples: |
-      - ...
+      - How do I change a reservation?
+      - can i change a reservation?
+      - change a reservation
+      - i want to change my reservation
 
-  - intent: checkin
+  - intent: user_name
     examples: |
-      - ...
-
-  - intent: checkout
-    examples: |
-      - ...
-
-  - intent: ask_billing
-    examples: |
-      - ...
+      - My name is Toan
+      - I am Toan
