@@ -1,91 +1,62 @@
 version: "3.1"
 
 stories:
-  - story: happy path
-    steps:
-      - intent: greet
-      - action: utter_greet
-      - intent: mood_great
-      - action: utter_happy
+  # - story: happy path
+  #   steps:
+  #     - intent: greet
+  #     - action: utter_greet
+  #     - intent: mood_great
+  #     - action: utter_happy
 
-  - story: sad path 1
-    steps:
-      - intent: greet
-      - action: utter_greet
-      - intent: mood_unhappy
-      - action: utter_cheer_up
-      - action: utter_did_that_help
-      - intent: affirm
-      - action: utter_happy
+  # - story: sad path 1
+  #   steps:
+  #     # - intent: greet
+  #     # - action: utter_greet
+  #     - intent: mood_unhappy
+  #     - action: utter_cheer_up
+  #     - action: utter_did_that_help
+  #     - intent: affirm
+  #     - action: utter_happy
 
-  - story: sad path 2
+  # - story: sad path 2
+  #   steps:
+  #     # - intent: greet
+  #     # - action: utter_greet
+  #     - intent: mood_unhappy
+  #     - action: utter_cheer_up
+  #     - action: utter_did_that_help
+  #     - intent: deny
+  #     - action: utter_goodbye
+
+  - story: greet
     steps:
       - intent: greet
-      - action: utter_greet
-      - intent: mood_unhappy
-      - action: utter_cheer_up
-      - action: utter_did_that_help
-      - intent: deny
-      - action: utter_goodbye
+      - action: action_greet
 
   - story: hotel introduction
     steps:
       - intent: hotel_introduction
       - action: utter_hotel_introduction
-      # - action: utter_how_can_I_help
 
-  # - story: ask availability
-  #   steps:
-  #     - intent: ask_availability
-  #     - action: utter_ask_availability
-
-  # - story: ask_room_type_availability
-  #   steps:
-  #     - intent: ask_room_type_availability
-  #     -
-  - story: ask room type
+  - story: book room
     steps:
-      - intent: ask_room_type
-      # - intent: enter_data
-      - action: utter_ask_room_type
-      # - intent: ask_availability
-      #   entities:
-      #     - room_type: single_room
-      # - intent: ask_availability
-      # entities:
-      #   - room_type: 'single_room'
+      - intent: book_room
+      - action: action_book_room
+
+  - story: ask availability
+    steps:
+      - intent: ask_availability
       - action: action_ask_availability
+      - intent: enter_number
+      # - slot_was_set:
+      #     - requested_slot: room_id
+      # - slot_was_set:
+      #     - room_id: "316"
+      - action: action_booking_form
+      - intent: affirm
+      - action: action_confirm_booking
 
-  - story: ask room preview
-    steps:
-      - intent: ask_room_preview
-      - action: utter_ask_room_preview
-
-  - story: ask room direction
-    steps:
-      - intent: ask_room_direction
-      - action: utter_ask_room_direction
-  # - story: ask room price
+  # - story: enter number
   #   steps:
-  #     - intent: ask_room_price
-  #     - action: utter_standard_room_prices
-  #     - action: utter_special_room_prices
-
-  # - story: ask room prices for specific date
-  #   steps:
-  #     - action: utter_special_room_prices
-  #     - intent: affirm
-  #     - action: stay_form
-  #     - active_loop: stay_form
-
-  # - story: Check availability of rooms
-  #   steps:
-  #     - action: utter_num_room_types
-  #     - action: action_check_rooms
-  #     - action: utter_stay_form
-
-  # - story: anything else to help - happy path
-  #   steps:
-  #     - action: utter_anything_else
-  #     - intent: deny
-  #     - action: utter_I_am_happy_to_help
+  #     - intent: enter_number
+  #     - action:

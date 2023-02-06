@@ -129,5 +129,5 @@ dmypy.json
 .pyre/
 
 # Rasa
-.rasa
+.rasa/
 models/

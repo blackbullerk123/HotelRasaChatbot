@@ -9,24 +9,16 @@ intents:
   - mood_unhappy
   - bot_challenge
   - hotel_introduction
+  - book_room
   - ask_availability
-  - ask_room_type
-  - ask_room_preview
-  - ask_room_direction
-  - enter_data
-  # - ask_for_meal
-  # - ask_for_meal_timing
-  # - ask_price
-  # - checkin_now
-  # - checkout_now
-  # - check_out_timings
-  # - check_in_timings
-  # - cancellation_policy
-  # - ask_cancelling
+  - enter_number
 
 responses:
-  utter_greet:
-    - text: "Hey! How are you?"
+  utter_greet_user:
+    - text: "Hey {name}! Can I help you?"
+
+  utter_greet_guest:
+    - text: "Welcome! What's your name?"
 
   utter_cheer_up:
     - text: "Here is something to cheer you up:"
@@ -45,200 +37,77 @@ responses:
     - text: "I am a bot, powered by Rasa."
 
   utter_hotel_introduction:
-    - text: "Tọa lạc tại địa chỉ 61-63 Hoàng Kế Viêm. Một trong những con đường sầm uất về du lịch và ẩm thực. Nằm trong khu các khách sạn và nhà nghỉ Đà Nẵng ven biển sầm uất nhất. Hanami mang một dáng vẻ sang trọng, hiện đại, một nét đẹp thanh nhã, hài hòa khiến bất cứ du khách nào khi đến Đà Nẵng cũng đều muốn ghé thăm. Nằm trên trục đường chính của tuyến phố phục vụ khách xuyên đêm An Thượng. Khách sạn Hanami Đà Nẵng sẽ đem đến cho quý khách cảm giác rộn ràng về một thành phố biển năng động. Ngoài ra, quý khách còn có thể tham gia nhiều lễ hội, sự kiện được tổ chức thường xuyên ở khu vực công viên biển.Với đội ngũ nhân viên tận tâm, nhiệt tình và chuyên nghiệp. Luôn sẵn lòng hỗ trợ để chuyến đi của du khách càng thêm đáng nhớ. Hanami cung cấp các dịch vụ cho thuê xe máy, mua vé và đặt tour bà nà các loại."
+    - text: "Okay. Tọa lạc tại địa chỉ 61-63 Hoàng Kế Viêm. Một trong những con đường sầm uất về du lịch và ẩm thực. Nằm trong khu các khách sạn và nhà nghỉ Đà Nẵng ven biển sầm uất nhất. Hanami mang một dáng vẻ sang trọng, hiện đại, một nét đẹp thanh nhã, hài hòa khiến bất cứ du khách nào khi đến Đà Nẵng cũng đều muốn ghé thăm. Nằm trên trục đường chính của tuyến phố phục vụ khách xuyên đêm An Thượng. Khách sạn Hanami Đà Nẵng sẽ đem đến cho quý khách cảm giác rộn ràng về một thành phố biển năng động. Ngoài ra, quý khách còn có thể tham gia nhiều lễ hội, sự kiện được tổ chức thường xuyên ở khu vực công viên biển.Với đội ngũ nhân viên tận tâm, nhiệt tình và chuyên nghiệp. Luôn sẵn lòng hỗ trợ để chuyến đi của du khách càng thêm đáng nhớ. Hanami cung cấp các dịch vụ cho thuê xe máy, mua vé và đặt tour bà nà các loại."
 
-  utter_ask_availability:
-    - text: "Sure, What type of room would you like to book?"
-
-  utter_ask_room_type:
-    - text: "We got single room & double room. Which type of room do you want?"
+  utter_can_book_room:
+    - text: "Okay, {name}. Now we have single room & double room. Which room type do you want?"
       buttons:
-        - title: "single_room"
-          # payload: '/ask_availability{{"room_type" : "single_room"}}'
-        - title: "double_room"
-          # payload: '/ask_availability{{"room_type" : "double_room"}}'
+        - title: "single_room "
+        - title: "double_room "
 
-  utter_ask_room_preview:
-    - text: "Sure, do you want me to tell you the direction?"
+  utter_cannot_book_room:
+    - text: "Sorry! There is no {room_type} available now!"
 
-  utter_ask_room_direction:
-    - text: "Okay, let me tell you the direction!"
+  utter_avail_room:
+    - text: "We have: {avail_room}. Which room do you want?"
 
-  # utter_ask_for_meal:
-  #   - text: "..."
+  utter_booking_form:
+    - text: "You want to book {room_type} {room_id}?"
+      # buttons:
+      #   - title: Yes
+      #   - title: No
 
-  # utter_ask_for_meal_timing:
-  #   - text: "..."
-
-  # utter_ask_price:
-  #   - text: "..."
-
-  # utter_checkin_now:
-  #   - text: "..."
-
-  # utter_checkout_now:
-  #   - text: "..."
-
-  # utter_check_in_timings:
-  #   - text: "Check-in time starts at 4 PM. Minimum check-in age is 21. Please contact the reception for early check-in requests."
-
-  # utter_check_out_timings:
-  #   - text: "Check-out time is 11 AM. Please contact the reception for late checkout requests."
-
-  # utter_cancellation_policy:
-  #   - text: "The booking deposit is refundable if the cancellation occurs at least 15 days before arrival. For cancellations made after this limit, a penalty will be imposed based on the cancellation policy."
-
-  # utter_ask_cancelling:
-  #   - text: "To cancel a reservation, select the “Reservations” link from the homepage."
-  #   - text: "On the Reservations page, under the heading ‘View, Change or Cancel a Reservation,’ enter your confirmation number, and either the last name on the reservation or the last four digits of the credit card used to make the reservation."
-
-actions:
-  - action_ask_availability
-  - action_ask_room_type
-  - action_ask_room_preview
-  - action_ask_room_direction
-  # - action_ask_for_meal
-  # - action_ask_for_meal_timing
-  # - action_ask_price
-  # - action_checkin_now
-  # - action_checkout_now
-  # - action_check_in_timings
-  # - action_check_out_timings
-  # - action_ask_cancelling
-  # - action_
-  # - action_
-  # - action_
-  # - action_
+  utter_booking_success:
+    - text: "Success! You cost {price}. Thank you!"
 
 entities:
-  - meal:
-      roles:
-        - breakfast
-        - morning_snack
-        - lunch
-        - afternoon_snack
-        - dinner
-        - midnight_snack
-        - buffet
-  # - room_type:
-  #     roles:
-  #       - single_room
-  #       - double_room
-  #       - president_room
+  - name
   - room_type
-  - email
-  - phone_number
-  - fullname
-  - num_single_rooms
-  - num_double_rooms
-  - time
-  - amount
+  - room_id
 
 slots:
-  fullname:
+  name:
     type: text
     influence_conversation: true
     mappings:
       - type: from_entity
-        entity: fullname
+        entity: name
 
-  email:
-    type: text
-    influence_conversation: true
-    mappings:
-      - type: from_entity
-        entity: email
-
-  phone_number:
-    type: text
-    influence_conversation: true
-    mappings:
-      - type: from_entity
-        entity: phone_number
-
-  checkin_date_dummy: # only needed to grab information during the intent
-    type: text
-    influence_conversation: true
-    mappings:
-      - type: from_entity
-        entity: time
-        intent: ask_availability
-
-  checkin_date:
-    type: text
-    influence_conversation: true
-    mappings:
-      - type: from_entity
-        entity: time
-        #intent: ask_availability
-        conditions:
-          - active_loop: stay_form
-            requested_slot: checkin_date
-      - type: custom
-
-  checkout_date:
-    type: text
-    influence_conversation: true
-    mappings:
-      - type: from_entity
-        entity: time
-        conditions:
-          - active_loop: stay_form
-            requested_slot: checkout_date
-
-  num_single_rooms:
-    type: float
-    influence_conversation: true
-    mappings:
-      - type: from_entity
-        entity: num_single_rooms
-        conditions:
-          - active_loop: room_type_form
-            requested_slot: num_single_rooms
-
-  num_double_rooms:
-    type: float
-    influence_conversation: true
-    mappings:
-      - type: from_entity
-        entity: num_double_rooms
-        conditions:
-          - active_loop: room_type_form
-            requested_slot: num_double_rooms
   room_type:
+    type: text
     influence_conversation: true
-    type: categorical
     mappings:
       - type: from_entity
         entity: room_type
-    values:
-      - "single_room"
-      - "double_room"
-forms:
-  fullname_form:
-    required_slots:
-      - fullname
 
-  email_form:
-    required_slots:
-      - email
+  room_id:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: room_id
 
-  phone_number_form:
-    required_slots:
-      - phone_number
+actions:
+  - action_greet
+  - action_book_room
+  - action_ask_availability
+  - action_booking_form
+  - action_confirm_booking
 
-  room_type_form:
-    required_slots:
-      - room_type
-
-  num_room_form:
-    required_slots:
-      - num_room
-
-  stay_form:
-    required_slots:
-      - checkin_date
-      - checkout_date
+# forms:
+#   book_room_form:
+#     name:
+#       - type: from_entity
+#         entity: name
+#     # age:
+#     #   - type: from_entity
+#     #     entity: age
+#     room_type:
+#       - type: from_entity
+#         entity: room_type
+#     room_id:
+#       - type: from_entity
+#         entity: room_id
 
 session_config:
   session_expiration_time: 60
