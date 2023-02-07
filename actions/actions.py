@@ -4,9 +4,6 @@
 # See this guide on how to implement these action:
 # https://rasa.com/docs/rasa/custom-actions
 
-
-# This is a simple example for a custom action which utters "Hello World!"
-
 from typing import Any, Text, Dict, List
 
 from rasa_sdk import Action, Tracker
@@ -38,6 +35,35 @@ class ActionGreet(Action):
             dispatcher.utter_message(response="utter_greet_guest", name=name)
 
         return [SlotSet("name", name)]
+
+# class ActionReceiveName(Action):
+
+#     def name(self) -> Text:
+#         return "action_receive_name"
+
+#     def run(self, dispatcher: CollectingDispatcher,
+#             tracker: Tracker,
+#             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+#         text = tracker.latest_message['text']
+#         dispatcher.utter_message(response="utter_receive_name", name=text)
+#         return [SlotSet("name", text)]
+
+# class ActionSayName(Action):
+
+#     def name(self) -> Text:
+#         return "action_say_name"
+
+#     def run(self, dispatcher: CollectingDispatcher,
+#             tracker: Tracker,
+#             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+#         print("action_say_name")
+#         name = tracker.get_slot("name")
+#         if not name:
+#             dispatcher.utter_message(response="utter_cannot_say_name")
+#         else:
+#             dispatcher.utter_message(response="utter_say_name", name=name)
+#         return []
 
 class ActionBookRoom(Action):
 
@@ -71,16 +97,11 @@ class ActionAskAvailability(Action):
         avail_rooms = []
         roomtype = tracker.get_slot('room_type')
         print(roomtype)
-        # if room_type is "Single room":
-        #     room_type == 'single_room'
-        # else:
-        #     room_type == 'double_room'
-        # name = tracker.get_slot('name')
         for i in range(len(room)):
             if room[i]['status'] == 'avail' and room[i]['room_type'] == roomtype:
                 avail_rooms.append(room[i]['room_id'])
         if (len(avail_rooms) > 0):
-            dispatcher.utter_message(response="utter_avail_room", avail_room=avail_rooms)
+            dispatcher.utter_message(response="utter_avail_room", avail_room= ', '.join(map(str,avail_rooms)))
         else:
             dispatcher.utter_message(response="utter_cannot_book_room", room_type=roomtype)
         
@@ -94,22 +115,25 @@ class ActionBookingForm(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        print("action_booking_form")
         room_id = tracker.get_slot('room_id')
         roomtype = tracker.get_slot('room_type')
+        print(room_id)
+        print(room_type)
         dispatcher.utter_message(response="utter_booking_form", room_id=room_id, room_type=roomtype)
         
         return []
 
-class ActionConfirmBooking(Action):
+class ActionConfirmFormBooking(Action):
 
     def name(self) -> Text:
-        return "action_confirm_booking"
+        return "action_confirm_form_booking"
 
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
-        print("booking")
+        print("action_confirm_form_booking")
         room_id = int(tracker.get_slot('room_id'))
 
         print(room_id)
@@ -121,7 +145,5 @@ class ActionConfirmBooking(Action):
                 print("booking", room[i]['room_type'], room_id, "success!")
                 dispatcher.utter_message(response="utter_booking_success", price=price)
                 break
-
-        
-        
+     
         return []

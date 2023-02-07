@@ -1,42 +1,12 @@
 version: "3.1"
 
 stories:
-  # - story: happy path
-  #   steps:
-  #     - intent: greet
-  #     - action: utter_greet
-  #     - intent: mood_great
-  #     - action: utter_happy
-
-  # - story: sad path 1
-  #   steps:
-  #     # - intent: greet
-  #     # - action: utter_greet
-  #     - intent: mood_unhappy
-  #     - action: utter_cheer_up
-  #     - action: utter_did_that_help
-  #     - intent: affirm
-  #     - action: utter_happy
-
-  # - story: sad path 2
-  #   steps:
-  #     # - intent: greet
-  #     # - action: utter_greet
-  #     - intent: mood_unhappy
-  #     - action: utter_cheer_up
-  #     - action: utter_did_that_help
-  #     - intent: deny
-  #     - action: utter_goodbye
-
   - story: greet
     steps:
       - intent: greet
       - action: action_greet
-
-  - story: hotel introduction
-    steps:
-      - intent: hotel_introduction
-      - action: utter_hotel_introduction
+      - intent: give_name
+      - action: action_greet
 
   - story: book room
     steps:
@@ -48,15 +18,15 @@ stories:
       - intent: ask_availability
       - action: action_ask_availability
       - intent: enter_number
-      # - slot_was_set:
-      #     - requested_slot: room_id
-      # - slot_was_set:
-      #     - room_id: "316"
       - action: action_booking_form
       - intent: affirm
-      - action: action_confirm_booking
+      - action: action_confirm_form_booking
 
-  # - story: enter number
+  # - story: name path
   #   steps:
-  #     - intent: enter_number
-  #     - action:
+  #     - intent: tell_name
+  #     - action: utter_ask_name
+  #     - intent: give_name
+  #     - action: action_receive_name
+  #     - intent: repeat_name
+  #     - action: action_say_name

@@ -16,6 +16,28 @@ nlu:
       - goodmorning
       - goodevening
       - good afternoon
+
+  # - intent: tell_name
+  #   examples: |
+  #     - i want to tell you my name
+  #     - give name
+  #     - ill give you my name
+  #     - do you want to know my name?
+
+  - intent: repeat_name
+    examples: |
+      - what is my name?
+      - tell me my name
+      - do you know my name?
+      - repeat my name
+
+  - intent: give_name
+    examples: |
+      - [vincent](name)
+      - [Rachael](name)
+      - [Emma](name)
+      - [juste](name)
+      - [jenny](name)
       - I am [Toan](name)
       - My name is [Toan](name)
       - my name is [Toan](name)
@@ -42,6 +64,7 @@ nlu:
       - of course
       - that sounds good
       - correct
+      - Yup
 
   - intent: deny
     examples: |
@@ -134,3 +157,9 @@ nlu:
       - [202](room_id)
       - [456](room_id)
       - [110](room_id)
+
+  - intent: out_of_scope
+    examples: |
+      - I want to order food
+      - What is 2 + 2?
+      - Who's the US President?
