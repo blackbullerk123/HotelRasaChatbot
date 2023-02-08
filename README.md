@@ -1,2 +1,0 @@
-# HotelRasaChatbot
-For hotel receptionist
