@@ -1,5 +1,4 @@
 version: "3.1"
-
 nlu:
   - intent: greet
     examples: |
@@ -16,21 +15,12 @@ nlu:
       - goodmorning
       - goodevening
       - good afternoon
-
-  # - intent: tell_name
-  #   examples: |
-  #     - i want to tell you my name
-  #     - give name
-  #     - ill give you my name
-  #     - do you want to know my name?
-
   - intent: repeat_name
     examples: |
       - what is my name?
       - tell me my name
       - do you know my name?
       - repeat my name
-
   - intent: give_name
     examples: |
       - [vincent](name)
@@ -42,7 +32,7 @@ nlu:
       - My name is [Toan](name)
       - my name is [Toan](name)
       - You can call me [Toan](name)
-
+      - [toan](name)
   - intent: goodbye
     examples: |
       - cu
@@ -55,7 +45,6 @@ nlu:
       - see you around
       - bye bye
       - see you later
-
   - intent: affirm
     examples: |
       - yes
@@ -65,7 +54,6 @@ nlu:
       - that sounds good
       - correct
       - Yup
-
   - intent: deny
     examples: |
       - no
@@ -75,7 +63,6 @@ nlu:
       - don't like that
       - no way
       - not really
-
   - intent: mood_great
     examples: |
       - perfect
@@ -92,7 +79,6 @@ nlu:
       - so so perfect
       - so good
       - so perfect
-
   - intent: mood_unhappy
     examples: |
       - my day was horrible
@@ -109,21 +95,18 @@ nlu:
       - extremly sad
       - so saad
       - so sad
-
   - intent: bot_challenge
     examples: |
       - are you a bot?
       - are you a human?
       - am I talking to a bot?
       - am I talking to a human?
-
   - intent: hotel_introduction
     examples: |
       - I want to know about your hotel
       - can you introduce about your hotel?
       - Tell me something about your hotel
       - what is hotel name?
-
   - intent: book_room
     examples: |
       - i want to book a room
@@ -137,7 +120,6 @@ nlu:
       - I want to stay at your hotel next week.
       - Do you have rooms available for the weekend?
       - Can we stay at your hotel with 10 people?
-
   - intent: ask_availability
     examples: |
       - 1 [Single Room](room_type)
@@ -145,7 +127,7 @@ nlu:
       - 3 [single room](room_type)
       - 4 [Double room](room_type)
       - 5 [double_room](room_type)
-
+      - 1: [single_room](room_type)
   - intent: enter_number
     examples: |
       - 1
@@ -157,9 +139,16 @@ nlu:
       - [202](room_id)
       - [456](room_id)
       - [110](room_id)
-
+      - [301](room_id)
   - intent: out_of_scope
     examples: |
       - I want to order food
       - What is 2 + 2?
       - Who's the US President?
+
+  - intent: room_type_detail
+    examples: |
+      - i need [single_room](room_type) detail
+      - give me detail about [double_room](room_type)
+      - i want to know more about [single_room](room_type)
+      - can you tell me some infomations about [double_room](room_type)

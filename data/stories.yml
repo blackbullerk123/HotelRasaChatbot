@@ -18,15 +18,44 @@ stories:
       - intent: ask_availability
       - action: action_ask_availability
       - intent: enter_number
-      - action: action_booking_form
-      - intent: affirm
       - action: action_confirm_form_booking
+      - intent: affirm
+      - action: utter_guide_direction
 
-  # - story: name path
-  #   steps:
-  #     - intent: tell_name
-  #     - action: utter_ask_name
-  #     - intent: give_name
-  #     - action: action_receive_name
-  #     - intent: repeat_name
-  #     - action: action_say_name
+  - story: ask name
+    steps:
+      - intent: repeat_name
+      - action: action_say_name
+
+  - story: interactive_story_1
+    steps:
+      - intent: greet
+      - action: action_greet
+      - slot_was_set:
+          - name: null
+      - intent: give_name
+        entities:
+          - name: toan
+      - slot_was_set:
+          - name: toan
+      - action: action_greet
+      - slot_was_set:
+          - name: toan
+      - intent: book_room
+      - action: action_book_room
+      - intent: ask_availability
+        entities:
+          - room_type: single_room
+      - slot_was_set:
+          - room_type: single_room
+      - action: action_ask_availability
+      - slot_was_set:
+          - room_type: single_room
+      - intent: enter_number
+        entities:
+          - room_id: "301"
+      - slot_was_set:
+          - room_id: "301"
+      - action: action_confirm_form_booking
+      - intent: affirm
+      - action: utter_guide_direction

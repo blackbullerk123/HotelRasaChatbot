@@ -16,6 +16,11 @@ rules:
       - intent: hotel_introduction
       - action: utter_hotel_introduction
 
+  - rule: ask room type detail
+    steps:
+      - intent: room_type_detail
+      - action: action_room_type_detail
+
   - rule: out-of-scope
     steps:
       - intent: out_of_scope

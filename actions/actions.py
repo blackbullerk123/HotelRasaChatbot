@@ -8,7 +8,8 @@ from typing import Any, Text, Dict, List
 
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
-from rasa_sdk.events import SlotSet
+from rasa_sdk.events import SlotSet, EventType
+from rasa_sdk.types import DomainDict
 
 room_type = ['single_room', 'double_room']
 room = [ { 'room_id' : 201, 'room_type' : 'single_room', 'status' : 'checkedin'} , 
@@ -16,8 +17,10 @@ room = [ { 'room_id' : 201, 'room_type' : 'single_room', 'status' : 'checkedin'}
          { 'room_id' : 301, 'room_type' : 'single_room', 'status' : 'avail'} , 
          { 'room_id' : 302, 'room_type' : 'double_room', 'status' : 'checkedin'} , 
          { 'room_id' : 401, 'room_type' : 'double_room', 'status' : 'booked'} , 
-         { 'room_id' : 402, 'room_type' : 'single_room', 'status' : 'booked'} , ]
+         { 'room_id' : 402, 'room_type' : 'single_room', 'status' : 'avail'} , ]
 room_price = {'single_room' : 100000, 'double_room' : 200000}
+room_description = {'single_room' : 'good for one person or a couple 😉', 
+                    'double_room' : 'good for a group of friends and okay for a couple but not exciting 🙄'}
 
 
 class ActionGreet(Action):
@@ -36,34 +39,21 @@ class ActionGreet(Action):
 
         return [SlotSet("name", name)]
 
-# class ActionReceiveName(Action):
+class ActionSayName(Action):
 
-#     def name(self) -> Text:
-#         return "action_receive_name"
+    def name(self) -> Text:
+        return "action_say_name"
 
-#     def run(self, dispatcher: CollectingDispatcher,
-#             tracker: Tracker,
-#             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-
-#         text = tracker.latest_message['text']
-#         dispatcher.utter_message(response="utter_receive_name", name=text)
-#         return [SlotSet("name", text)]
-
-# class ActionSayName(Action):
-
-#     def name(self) -> Text:
-#         return "action_say_name"
-
-#     def run(self, dispatcher: CollectingDispatcher,
-#             tracker: Tracker,
-#             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-#         print("action_say_name")
-#         name = tracker.get_slot("name")
-#         if not name:
-#             dispatcher.utter_message(response="utter_cannot_say_name")
-#         else:
-#             dispatcher.utter_message(response="utter_say_name", name=name)
-#         return []
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        print("action_say_name")
+        name = tracker.get_slot("name")
+        if not name:
+            dispatcher.utter_message(response="utter_cannot_say_name")
+        else:
+            dispatcher.utter_message(response="utter_say_name", name=name)
+        return []
 
 class ActionBookRoom(Action):
 
@@ -82,7 +72,6 @@ class ActionBookRoom(Action):
                 dispatcher.utter_message(response="utter_can_book_room", avail_room=avail_rooms)
             else:
                 dispatcher.utter_message(response="utter_cannot_book_room")
-        # dispatcher.utter_message(text=avail_rooms)
         
         return []
 
@@ -131,7 +120,7 @@ class ActionConfirmFormBooking(Action):
 
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
-            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+            domain: DomainDict) -> List[EventType]:
         
         print("action_confirm_form_booking")
         room_id = int(tracker.get_slot('room_id'))
@@ -140,10 +129,34 @@ class ActionConfirmFormBooking(Action):
         price = 0
         for i in range(len(room)):
             if room[i]['room_id'] == room_id:
-                room[i]['status'] == 'booked'
+                room[i]['status'] = 'booked'
                 price = room_price[room[i]['room_type']]
                 print("booking", room[i]['room_type'], room_id, "success!")
+                print(room)
                 dispatcher.utter_message(response="utter_booking_success", price=price)
                 break
      
+        return []
+
+class ActionRoomTypeDetail(Action):
+
+    def name(self) -> Text:
+        return "action_room_type_detail"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        print("action_room_type_detail")
+        roomtype = tracker.get_slot('room_type')
+        print(room_type)
+        for i in range(len(room)):
+            if room[i]['room_type'] == roomtype:
+                room[i]['status'] = 'booked'
+                # print("booking", room[i]['room_type'], room_id, "success!")
+                # print(room)
+                dispatcher.utter_message(response="utter_room_type_detail", 
+                                        room_type=roomtype, price=room_price[room[i]['room_type']], 
+                                        description=room_description[room[i]['room_type']])
+                break
+        
         return []
