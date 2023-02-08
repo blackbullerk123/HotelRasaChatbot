@@ -22,10 +22,20 @@ stories:
       - intent: affirm
       - action: utter_guide_direction
 
+  - story: deny path
+    steps:
+      - intent: deny
+      - action: action_greet
+
   - story: ask name
     steps:
       - intent: repeat_name
       - action: action_say_name
+
+  - story: give feedback
+    steps:
+      - intent: give_feed_back
+      - action: utter_receive_feedback
 
   - story: interactive_story_1
     steps:

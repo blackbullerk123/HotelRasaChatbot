@@ -14,6 +14,10 @@ intents:
   - mood_unhappy
   - repeat_name
   - room_type_detail
+  - ask_discount
+  - ask_hotel_faq
+  - ask_hotel_policy
+  - give_feed_back
 responses:
   utter_greet_user:
     - text: Hey {name}! Can I help you?
@@ -57,6 +61,12 @@ responses:
     - text: "Okay, follow me 🤗"
   utter_room_type_detail:
     - text: "{room_type} costs {price}. It's {description}."
+  utter_ask_hotel_faq:
+    - text: "Okay, there are some faq ..."
+  utter_ask_hotel_policy:
+    - text: "Okay, there are some policies ..."
+  utter_receive_feedback:
+    - text: "Okay, i will note your idea"
 entities:
   - name
   - room_type
@@ -89,6 +99,7 @@ actions:
   - utter_guide_direction
   - action_say_name
   - action_room_type_detail
+  - action_ask_discount
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true

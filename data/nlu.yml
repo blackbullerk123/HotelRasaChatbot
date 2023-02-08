@@ -152,3 +152,39 @@ nlu:
       - give me detail about [double_room](room_type)
       - i want to know more about [single_room](room_type)
       - can you tell me some infomations about [double_room](room_type)
+
+  - intent: ask_discount
+    examples: |
+      - i want to know some recent discount of hotel?
+      - send me discount list of hotel?
+      - can you tell me some infomations about hotel discount?
+      - i need some detail about hotel discount
+      - show me list of hotel discount
+
+  - intent: ask_hotel_faq
+    examples: |
+      - i want to know all about faq?
+      - send me list of hotel faq?
+      - can you tell me some faqs?
+      - i need some detail about faq
+      - show me list of hotel faqs
+
+  - intent: ask_hotel_policy
+    examples: |
+      - I want to know about your hotel policies
+      - can you tell about your hotel policy?
+      - send me something about your hotel policy
+      - what is your hotel policies?
+      - i need some detail about policies of this hotel
+      - show me list of this hotel policy
+
+  - intent: give_feed_back
+    examples: |
+      - Top position, really close to everything
+      - Perfect location.
+      - cosy, easily accessible, near many attractions
+      - body wash isn’t provided, room is a bit dark even in the morning
+      - The bathroom requires some maintenance
+      - Noise from the downstairs bar at night time.
+      - Wifi connection was unstable.
+      - Very hot in the rooms.
