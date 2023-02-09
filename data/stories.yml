@@ -22,10 +22,30 @@ stories:
       - intent: affirm
       - action: utter_guide_direction
 
+  - story: deny path
+    steps:
+      - intent: deny
+      - action: action_greet
+
   - story: ask name
     steps:
       - intent: repeat_name
       - action: action_say_name
+
+  - story: give feedback
+    steps:
+      - intent: give_feed_back
+      - action: utter_receive_feedback
+
+  - story: giving place type
+    steps:
+      - intent: giving_place_type
+      - action: action_find_place
+
+  - story: ask weather
+    steps:
+      - intent: ask_weather
+      - action: utter_ask_weather
 
   - story: interactive_story_1
     steps:
@@ -59,3 +79,18 @@ stories:
       - action: action_confirm_form_booking
       - intent: affirm
       - action: utter_guide_direction
+
+  - story: interactive_story_2
+    steps:
+      - intent: giving_place_type
+        entities:
+          - place_type: coffee
+      - slot_was_set:
+          - place_type: coffee
+      - action: action_find_place
+      - intent: giving_place_type
+        entities:
+          - address: New York
+      - slot_was_set:
+          - address: New York
+      - action: action_find_place
