@@ -160,3 +160,26 @@ class ActionRoomTypeDetail(Action):
                 break
         
         return []
+
+
+class ActionFindPlace(Action):
+
+    def name(self) -> Text:
+        return "action_find_place"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        print("action_find_place")
+        place_type = tracker.get_slot('place_type')
+        print(place_type)
+        address = tracker.get_slot('address')
+        print(address)
+        if (place_type and address): 
+            
+            dispatcher.utter_message(response="utter_find_place", place_type=place_type, address=address)
+            return [SlotSet("place_type", None), SlotSet("address", None)]
+        else:
+            dispatcher.utter_message(response="utter_input_address")
+        
+        return []

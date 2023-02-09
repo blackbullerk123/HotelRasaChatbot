@@ -139,16 +139,159 @@ nlu:
       - [202](room_id)
       - [456](room_id)
       - [110](room_id)
-      - [301](room_id)
   - intent: out_of_scope
     examples: |
       - I want to order food
       - What is 2 + 2?
       - Who's the US President?
-
   - intent: room_type_detail
     examples: |
       - i need [single_room](room_type) detail
       - give me detail about [double_room](room_type)
       - i want to know more about [single_room](room_type)
       - can you tell me some infomations about [double_room](room_type)
+  - intent: ask_discount
+    examples: |
+      - i want to know some recent discount of hotel?
+      - send me discount list of hotel?
+      - can you tell me some infomations about hotel discount?
+      - i need some detail about hotel discount
+      - show me list of hotel discount
+  - intent: ask_hotel_faq
+    examples: |
+      - i want to know all about faq?
+      - send me list of hotel faq?
+      - can you tell me some faqs?
+      - i need some detail about faq
+      - show me list of hotel faqs
+  - intent: ask_hotel_policy
+    examples: |
+      - I want to know about your hotel policies
+      - can you tell about your hotel policy?
+      - send me something about your hotel policy
+      - what is your hotel policies?
+      - i need some detail about policies of this hotel
+      - show me list of this hotel policy
+  - intent: give_feed_back
+    examples: |
+      - Top position, really close to everything
+      - Perfect location.
+      - cosy, easily accessible, near many attracions
+      - body wash isn't provided, room is a bit dark even in the morning
+      - The bathroom requires some maintenance
+      - Noise from the downstairs bar at night time.
+      - Wifi connection was unstable.
+      - Very hot in the rooms.
+      - bad service
+      - bad attitude
+      - good room
+      - too expensive
+  - intent: giving_place_type
+    examples: |
+      - I want to look for [restaurants](place_type) in [Thanh Khe District](address)
+      - I would like to make a search for [restaurants](place_type) on [Dien Bien Phu street](address)
+      - Look for [coffee houses](place_type)
+      - Search for [coffee shop](place_type)
+      - Find [restaurants](place_type) near [Nigeria](address)
+      - Search [coffee houses](place_type) around [La Souterraine, France](address)
+      - Look for them [market](place_type) near about [State of Mato Grosso, Brazil](address)
+      - Search for [restaurants](place_type) close to the [Taj Mahal, India](address)
+      - Search [restaurants](place_type) around the [Kremlin city, Russia](address)
+      - Give me [coffee houses](place_type) in [Tokyo city, Japan](address) with a radius of 80 km
+      - I want to look for [market](place_type)
+      - I want [coffee houses](place_type) thirty three kilometer from here.
+      - I want to search [supermarket](place_type) near [123 Xo Viet Nghe Tinh street](address)
+      - Look for [restaurants](place_type) in [Canada](address)
+      - Look for [shopping mall](place_type) instead
+      - Look for the [shopping mall](place_type)
+      - I want to search [attractions](place_type) in [New York city, USA](address)
+      - Look for [shopping mall](place_type) in [Seattle, USA](address)
+      - I want to know about some [attractions](place_type) on [317 Dundas St W](address)
+      - can you tell me some [attractions](place_type) on [Bui Vien street]?
+      - send me something about [cafe](place_type)  in [Le Loi street](address)?
+      - show me list of [attractions](place_type)  on [Hai Chau district](address)
+      - please help me to find some interesting [attractions](place_type) in [pune city](address)
+      - find a [coffee](place_type)
+      - [Truong Chinh street](address)
+      - [New York](address)
+      - [Halovi](address)
+      - [ON M5T 1G4](address)
+      - i'm looking for [a place to eat](place_type)
+      - I want [to grab lunch](place_type)
+      - I want [to grab dinner](place_type)
+      - I want [to eat something](place_type)
+      - I need to get [something to drink](place_type)
+      - I want [to order some food](place_type)
+      - please find me [place to drink something](place_type)
+      - please find [restaurants](place_type)
+      - I'm starving please find [places to drink](place_type) on [Route 66, USA](address)
+      - I need [some place to buy](place_type) in [Lombard Street, San Francisco, USA](address)
+      - please show to me [some location to eat](place_type) in [Abbey Road, London, UK](address)
+      - Fetch me [some places to buy](place_type)
+      - Best [rastaurant](place_type) in [Broadway, New York City, USA](address)
+      - [Need some food](place_type)
+      - budget friendly [restaurants](place_type) in [Lan Kwai Fong, Hong Kong](address)
+      - cheapest [restaurants](place_type) in [White Rim Road, Canyonlands National Park, Utah, USA](address)
+      - find a [restaurant](place_type) with mid price range in [Tianmen Mountain Road, Hunan, China](address)
+      - find me a american [restaurant](place_type) in [Stelvio Pass, Eastern Alps, Italy](address)
+      - I am hungry please search [a drinking spot](place_type) in [Guoliang Tunnel Road, China](address)
+      - I am searching for [a dinner spot](place_type)
+  - intent: ask_weather
+    examples: |
+      - what's the weather today
+      - what's the weather in Czech Republic
+      - what is the weather
+      - what is the weather in New Zealand
+      - whats the weather
+      - what is the weather like
+      - how is the weather
+      - how's the weather
+      - hows the weather
+  - synonym: restaurant
+    examples: |
+      - restaurants
+      - a place to eat
+      - grab lunch
+      - a dinner spot
+      - to grab lunch
+      - to grab dinner
+      - to eat something
+      - to order some food
+      - some location to eat
+      - Need some food
+  - synonym: coffee house
+    examples: |
+      - cafe
+      - coffee houses
+      - coffee shop
+      - coffee shops
+      - a drinking spot
+      - a place to drink
+      - something to drink
+      - place to drink something
+      - places to drink
+  - synonym: shopping
+    examples: |
+      - market
+      - super market
+      - markets
+      - supermarkets
+      - super markets
+      - shopping malls
+      - Shopping mall
+      - Clothes Shop
+      - Shoes shop
+      - Fashion shop
+      - some place to buy
+      - some places to buy
+  - synonym: attraction
+    examples: |
+      - attractions
+      - Park
+      - Night club
+      - cinema
+      - Theaters
+      - Gym
+      - Swimming Pool
+      - Beach
+      - museum

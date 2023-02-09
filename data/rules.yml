@@ -21,7 +21,22 @@ rules:
       - intent: room_type_detail
       - action: action_room_type_detail
 
-  - rule: out-of-scope
+  - rule: out of scope
     steps:
       - intent: out_of_scope
       - action: utter_out_of_scope
+
+  - rule: ask discount
+    steps:
+      - intent: ask_discount
+      - action: action_ask_discount
+
+  - rule: ask hotel faq
+    steps:
+      - intent: ask_hotel_faq
+      - action: utter_ask_hotel_faq
+
+  - rule: ask hotel policy
+    steps:
+      - intent: ask_hotel_policy
+      - action: utter_ask_hotel_policy
