@@ -95,12 +95,17 @@ stories:
           - address: New York
       - action: action_find_place
 
-  - story: ask time
+  - story: ask datetime
     steps:
-      - intent: ask_time
-      - action: action_ask_time
+      - intent: ask_datetime
+      - action: action_ask_datetime
 
   - story: ask language bot
     steps:
       - intent: ask_languagesbot
       - action: utter_ask_languagesbot
+
+  - story: ask rasa
+    steps:
+      - intent: ask_whatisrasa
+      - action: utter_ask_whatisrasa

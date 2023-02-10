@@ -58,6 +58,32 @@ nlu:
       - what is my name
       - what is my name?
       - what's my name?
+      - Can you tell me who I am?
+      - Can you tell me who am I?
+      - Do you know who I am?
+      - Do you know who am I?
+      - How can I determine who I am?
+      - How can I determine who am I?
+      - How do I discover who I am?
+      - How do I discover who am I?
+      - How do I identify myself?
+      - Okay who am I?
+      - Shall i know who am i?
+      - Tell me who I am.
+      - Tell me who I am?
+      - Tell me who am I?
+      - WHo am I
+      - Who am I?
+      - Who could I be?
+      - can you tell me what I am?
+      - can you tell me what my identity is?
+      - can you tell me who I am?
+      - tell me what my identity is?
+      - tell me who I am?
+      - what's my identity?
+      - who am i
+      - who are I ?
+      - who may i ?
   - intent: give_name
     examples: |
       - [vincent](name)
@@ -138,6 +164,24 @@ nlu:
       - are you a human?
       - am I talking to a bot?
       - am I talking to a human?
+      - who are you
+      - who the hell are you?
+      - who are you?
+      - who are u
+      - who r u
+      - who is this
+      - tell me who you are
+      - what is your name
+      - hi what is your name?
+      - what is your name?
+      - what are you?
+      - what is ur name
+      - what I can call you
+      - your name?
+      - tell me your name
+      - what's your name
+      - what is you name
+      - what is you name and where are you from
   - intent: hotel_introduction
     examples: |
       - I want to know about your hotel
@@ -411,7 +455,7 @@ nlu:
       - Beach
       - museum
 
-  - intent: ask_time
+  - intent: ask_datetime
     examples: |
       - Can you give me the time?
       - Can you tell me the time?
@@ -626,3 +670,78 @@ nlu:
       - Dumme sara
       - αστεία λές
       - rasa
+  - intent: ask_whatisrasa
+    examples: |
+      - Can you brief me about rasa
+      - Can you tell me more about rasa?
+      - Can you tell me what Rasa does?
+      - Could you tell me more about Rasa?
+      - Give me more information about Rasa
+      - How does Rasa work?
+      - I want to know about rsa
+      - I want to know what rasa actually does that isn't clear to me yet
+      - I want to learn what rasa does
+      - I want to learn what rasa is
+      - I would like to know about rasa
+      - I would like to know more about your product
+      - OK can u brief me Abt rasa
+      - RASA?
+      - Rasa Is?
+      - WHAT IS IT
+      - WHAT IS RASA
+      - What Is rasa?
+      - What can rasa do?
+      - What do you do as a company?
+      - What do you do at Rasa?
+      - What does Rasa build?
+      - What does Rasa do?
+      - What does Rasa make?
+      - What does rasa do exactly?
+      - What exactly is Rasa?
+      - What is Rasa?
+      - What is rasa doing exactly?
+      - What is rasa?
+      - What is the RASA Stack?
+      - What's rasa?
+      - can you explain rasa?
+      - can you pls explain what rasa does
+      - could you tell me more about rasa
+      - explain me what rasa does
+      - explain me what rasa is
+      - how does RASA work?
+      - how does rasa work
+      - how does rasa work?
+      - how rasa works ?
+      - how works rasa
+      - i dont get what rasa is
+      - i havent understood yet what rasa actually is
+      - i want to about rasa
+      - i want to know about rasa
+      - i want to know what rasa does
+      - i want to learn something about rasa
+      - so how does it all work?
+      - sorry tell me about rasa
+      - tell me about rasa
+      - tell me bout rasa
+      - tell me more about rasa
+      - tell me more about your company
+      - what are the componensts of RASA
+      - what can I do with Rasa?
+      - what can i do with rasa
+      - what do you guys do at rasa
+      - what does rasa do
+      - what does rasa do ?
+      - what does rasa do?
+      - what does rasa mean
+      - what is rasa
+      - what is rasa?
+      - what is in rasa
+      - what is it for?
+      - what is rasa
+      - what is rasa actually
+      - what is rasa?
+      - whats rasa
+      - yeah go on explaining what rasa is
+      - RASA IS SOFTWARE?
+      - rasa os
+      - what is Rasa

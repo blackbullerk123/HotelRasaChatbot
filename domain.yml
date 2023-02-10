@@ -20,8 +20,9 @@ intents:
   - mood_unhappy
   - repeat_name
   - room_type_detail
-  - ask_time
+  - ask_datetime
   - ask_languagesbot
+  - ask_whatisrasa
 responses:
   utter_greet_user:
     - text: Hey {name}! Can I help you?
@@ -81,6 +82,10 @@ responses:
     - text: "Now is {time}"
   utter_ask_languagesbot:
     - text: "Now I can only speak English."
+  utter_ask_whatisrasa:
+    - text: "Rasa Open Source is a conversational AI framework for that provides machine learning tools for
+    building contextual assistants. You can read more about it here in the docs or on our
+    https://rasa.com/."
 entities:
   - address
   - place_type
@@ -136,6 +141,7 @@ actions:
   - action_say_name
   - utter_guide_direction
   - action_ask_time
+  - action_ask_datetime
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
