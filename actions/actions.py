@@ -10,7 +10,7 @@ from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import SlotSet, EventType
 from rasa_sdk.types import DomainDict
-
+from datetime import datetime
 room_type = ['single_room', 'double_room']
 room = [ { 'room_id' : 201, 'room_type' : 'single_room', 'status' : 'checkedin'} , 
          { 'room_id' : 202, 'room_type' : 'double_room', 'status' : 'booked'} , 
@@ -183,3 +183,19 @@ class ActionFindPlace(Action):
             dispatcher.utter_message(response="utter_input_address")
         
         return []
+
+
+class ActionAskTime(Action):
+
+    def name(self) -> Text:
+        return "action_ask_time"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        print("action_ask_time")
+        dispatcher.utter_message(response="utter_ask_time", time=datetime.now().strftime("%d/%m/%Y %H:%M:%S"))
+        
+        return []
+
+

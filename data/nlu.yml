@@ -21,6 +21,69 @@ nlu:
       - tell me my name
       - do you know my name?
       - repeat my name
+      - Can you tell me my name?
+      - Can you tell me what I am called?
+      - Do I have a name?
+      - Do I have a name? What is it?
+      - Do you know my name?
+      - Do you know what my name is?
+      - Explain my name to me.
+      - I have a name, what is it?
+      - I'd like to know my name
+      - I'd like to know what my name is
+      - Inform me what my name is
+      - May i know my name?
+      - Please let me know what my name is
+      - Say my name.
+      - Tell me my name
+      - Tell me my name.
+      - What am I called?
+      - What could be my name?
+      - What did my parents name me?
+      - What do I call myself?
+      - What do my colleagues call me?
+      - What do people call me?
+      - What does everyone call me?
+      - What else do people call me?
+      - What exactly is my name?
+      - What is my first name?
+      - What is my full name?
+      - What is my name?
+      - What is the name I was given?
+      - What name do I go by?
+      - What name should I recognize for myself?
+      - What was I named?
+      - What would be the name on my tombstone?
+      - can you tell me my name?
+      - what is my name
+      - what is my name?
+      - what's my name?
+      - Can you tell me who I am?
+      - Can you tell me who am I?
+      - Do you know who I am?
+      - Do you know who am I?
+      - How can I determine who I am?
+      - How can I determine who am I?
+      - How do I discover who I am?
+      - How do I discover who am I?
+      - How do I identify myself?
+      - Okay who am I?
+      - Shall i know who am i?
+      - Tell me who I am.
+      - Tell me who I am?
+      - Tell me who am I?
+      - WHo am I
+      - Who am I?
+      - Who could I be?
+      - can you tell me what I am?
+      - can you tell me what my identity is?
+      - can you tell me who I am?
+      - tell me what my identity is?
+      - tell me who I am?
+      - what's my identity?
+      - who am i
+      - who are I ?
+      - who may i ?
   - intent: give_name
     examples: |
       - [vincent](name)
@@ -101,6 +164,24 @@ nlu:
       - are you a human?
       - am I talking to a bot?
       - am I talking to a human?
+      - who are you
+      - who the hell are you?
+      - who are you?
+      - who are u
+      - who r u
+      - who is this
+      - tell me who you are
+      - what is your name
+      - hi what is your name?
+      - what is your name?
+      - what are you?
+      - what is ur name
+      - what I can call you
+      - your name?
+      - tell me your name
+      - what's your name
+      - what is you name
+      - what is you name and where are you from
   - intent: hotel_introduction
     examples: |
       - I want to know about your hotel
@@ -247,6 +328,84 @@ nlu:
       - how is the weather
       - how's the weather
       - hows the weather
+      - Are there any meteorological changes that I need to be aware of?
+      - Are we in for a scorcher?
+      - Beautiful day, isn't it?
+      - Can I ask you something about weather
+      - Can we expect any thunderstorms?
+      - Do you have good weather?
+      - How is the weather today?
+      - How is the weather?
+      - How is weather today
+      - Is it hot or cold?
+      - Is it humid out there today?
+      - Is it quite breezy outside?
+      - Is it raining
+      - Is it raining?
+      - Looks like a beautiful day hey?
+      - Nice day out today?
+      - Weather?
+      - What is the temperature today?
+      - What is the weather at your place?
+      - What is the weather for tomorrow?
+      - What is the weather in newyork?
+      - What's it like out there?
+      - What's the weather forecast?
+      - What's the weather like over there?
+      - What's the weather like where I am right now?
+      - What's the weather like?
+      - Will I require my raincoat today?
+      - Will the skies be clear today?
+      - Will we build a snowman today?
+      - excellent - is it hot in [Berlin](location)?
+      - how is the weather
+      - how is the weather ?
+      - how is the weather in [berlin](location)?
+      - how is the weather?
+      - how's the weather ?
+      - how's the weather in [berlin](location)
+      - how's the weather?
+      - how's weather
+      - hows the waether
+      - hows the weather in bot world
+      - hows the weather today in [berlin](location)?
+      - is it hot ?
+      - is it hot outside ?
+      - is it sunny
+      - is the sun out where you are?
+      - is the sun out where zou are?
+      - it is cold
+      - temperature?
+      - the weather today
+      - weatger
+      - weather
+      - weather?
+      - well, if you wish: what about the weather
+      - what about the weather in [Lüneburg](location)
+      - what is the temperature
+      - what is the wather
+      - what is the weatehr
+      - what is the weather
+      - what is the weather in [Berlin](location)
+      - what is the weather in [zurich](location)?
+      - what is the weather like where you are?
+      - what is the weather like?
+      - what is the whether today
+      - what the wheather like?
+      - what"s the weather
+      - what's the weather
+      - what's the weather like
+      - what's the weather like in [LA](location)
+      - what's the weather like where you are?
+      - what's the weather like?
+      - what's the weather today
+      - what's the weather today?
+      - whats the temperature
+      - whats the temperature in [delhi](location)?
+      - whats the weather in [berlin](location)?
+      - whats the weather like tomorrow?
+      - wheather at you location?
+      - wheather be like at your place?
   - synonym: restaurant
     examples: |
       - restaurants
@@ -295,3 +454,294 @@ nlu:
       - Swimming Pool
       - Beach
       - museum
+
+  - intent: ask_datetime
+    examples: |
+      - Can you give me the time?
+      - Can you tell me the time?
+      - Can you tell me what time it is?
+      - Can you tell the time?
+      - Could you tell me the time, please?
+      - Could you tell me the time?
+      - Could you tell me what time is it?
+      - Do you have the time?
+      - Do you know the time?
+      - Do you know what time it is?
+      - Excuse me, what time is it?
+      - Give me the time.
+      - Hi, I need the time.
+      - I need to know what time it is.
+      - Pardon me, but do you know the time?
+      - Tell me the time.
+      - Time, please!
+      - Time?
+      - What is the current time?
+      - What is the exact time?
+      - What is the hour and minute right now?
+      - What is the time?
+      - What might the time be?
+      - What time do we have?
+      - What time have we got?
+      - What time is it right now?
+      - What's the current time?
+      - What's the time right now?
+      - What's the time?
+      - Would you tell me what time it is?
+      - do you have the time?
+      - do you know the current time?
+      - tell me the current time.
+      - tell me the time it is.
+      - tell me the time.
+      - tell me what time you have.
+      - that's true. do you know what time it is?
+      - what is the current time?
+      - what is the time ?
+      - what is the time?
+      - what is time in US ?
+      - what is time is US ?
+      - what is time is USA ?
+      - what time do you have?
+      - what time is it
+      - what time is it?
+      - what time it is
+      - what's the time
+      - whats the time now
+      - What date is it today?
+      - What day is it today?
+      - What is the date today?
+      - tell me the date
+      - tell me the date is it
+      - do you know what is the date today?
+      - What is today's date?
+      - What is today's day?
+      - Can you give me the time?
+      - Can you tell me the time?
+      - Can you tell me what time it is?
+      - Can you tell the time?
+      - Could you tell me the time, please?
+      - Could you tell me the time?
+      - Could you tell me what time is it?
+      - Do you have the time?
+      - Do you know the time?
+      - Do you know what time it is?
+      - Excuse me, what time is it?
+      - Give me the time.
+      - Hi, I need the time.
+      - I need to know what time it is.
+      - Pardon me, but do you know the time?
+      - Tell me the time.
+      - Time, please!
+      - Time?
+      - What is the current time?
+      - What is the exact time?
+      - What is the hour and minute right now?
+      - What is the time?
+      - What might the time be?
+      - What time do we have?
+      - What time have we got?
+      - What time is it in [Berlin](location)?
+      - What time is it right now?
+      - What's the current time?
+      - What's the time right now?
+      - What's the time?
+      - Would you tell me what time it is?
+      - do you have the time?
+      - do you know the current time?
+      - tell me the current time.
+      - tell me the time it is.
+      - tell me the time.
+      - tell me what time you have.
+      - that's true. do you know what time it is?
+      - what is the current time?
+      - what is the time ?
+      - what is the time in Sydney?
+      - what is the time?
+      - what is time in US ?
+      - what is time is US ?
+      - what is time is USA ?
+      - what time do you have?
+      - what time is it
+      - what time is it?
+      - what time it is
+      - what's the time
+      - whats the time now
+  - intent: ask_languagesbot
+    examples: |
+      - Are you familiar with more than one language?
+      - Can you communicate in any other languages?
+      - Can you speak more than one language?
+      - Do you know any other languages?
+      - Do you know other languages?
+      - Do you speak german?
+      - Do you speak any other languages?
+      - Do you understand spanish?
+      - How many different languages are you fluent in?
+      - How many languages are you familiar with?
+      - How many languages can you speak?
+      - How many languages do you have knowledge of?
+      - How many languages do you know?
+      - In what languages are you fluent enough?
+      - In which languages are you fluent?
+      - In which languages can you speak?
+      - Speak any other languages?
+      - What are all of the different languages you can speak?
+      - What are the languages you can speak?
+      - What do you speak?
+      - What languages are you fluent in?
+      - What languages can you communicate in?
+      - What languages can you converse in?
+      - What languages can you use?
+      - What languages do you know how to use?
+      - What languages do you know?
+      - What languages do you speak?
+      - Which languages are you familiar with?
+      - Which languages do you speak?
+      - are you bilingual?
+      - are you multilingual?
+      - can you speak Spanish?
+      - can you speak in Italian?
+      - do you know Chinese
+      - do you speak Dutch?
+      - do you speak German?
+      - do you speak any other languages?
+      - how many languages are you fluent in?
+      - how many languages do you know?
+      - tell me some languages you know?
+      - what else do you know besides English?
+      - what foreign languages are you fluent in?
+      - what foreign languages do you know?
+      - what language do you use
+      - what languages are you comfortable speaking at?
+      - what languages are you familiar with?
+      - what languages are you good at speaking?
+      - what languages do you know?
+      - what languages do you speak
+      - what languages you are well versed ?
+      - what languages you can be comfortable speaking?
+      - what languages you can handle well?
+      - what languages you can speak ?
+      - what languages you know?
+      - what languages you prefer more speaking at?
+      - which languages do you understand?
+      - you know French
+      - you speak china ?
+      - I want to speak binary with you
+      - ARE YOU SPANISH
+      - we cant converse in french?
+      - can we converse in french?
+      - Do you speak italian?
+      - Wie fange ich mit Rasa an?
+      - hilf mir beim start
+      - tschüssikowski
+      - ¿Qué pasa?
+      - ça va ?
+      - como te llamas
+      - wer bist Du?
+      - como inicio en rasa
+      - come stai?
+      - como estas
+      - de donde eres
+      - de que lugar eres?
+      - epdi iruka
+      - eres humana
+      - kalhmera sara ti kaneis
+      - kannst du auch deutsch?
+      - kannst du dies auch auf deutsch?
+      - oui je besoine de l'aide
+      - que puedes hacer?
+      - tu parles francais?
+      - tudo bom
+      - tu pagal
+      - kannst du mir helfen
+      - tu kaisi he
+      - こにちは
+      - 日本語分かる？
+      - chào
+      - 你好
+      - I'm speaking a non-english language.
+      - 呵呵
+      - 我该如何使用
+      - 你懂中文吗？
+      - 您好
+      - 你叫什么名字
+      - 你是谁
+      - 中文
+      - kya hindi me bat kar sakate ho
+      - Dumme sara
+      - αστεία λές
+      - rasa
+  - intent: ask_whatisrasa
+    examples: |
+      - Can you brief me about rasa
+      - Can you tell me more about rasa?
+      - Can you tell me what Rasa does?
+      - Could you tell me more about Rasa?
+      - Give me more information about Rasa
+      - How does Rasa work?
+      - I want to know about rsa
+      - I want to know what rasa actually does that isn't clear to me yet
+      - I want to learn what rasa does
+      - I want to learn what rasa is
+      - I would like to know about rasa
+      - I would like to know more about your product
+      - OK can u brief me Abt rasa
+      - RASA?
+      - Rasa Is?
+      - WHAT IS IT
+      - WHAT IS RASA
+      - What Is rasa?
+      - What can rasa do?
+      - What do you do as a company?
+      - What do you do at Rasa?
+      - What does Rasa build?
+      - What does Rasa do?
+      - What does Rasa make?
+      - What does rasa do exactly?
+      - What exactly is Rasa?
+      - What is Rasa?
+      - What is rasa doing exactly?
+      - What is rasa?
+      - What is the RASA Stack?
+      - What's rasa?
+      - can you explain rasa?
+      - can you pls explain what rasa does
+      - could you tell me more about rasa
+      - explain me what rasa does
+      - explain me what rasa is
+      - how does RASA work?
+      - how does rasa work
+      - how does rasa work?
+      - how rasa works ?
+      - how works rasa
+      - i dont get what rasa is
+      - i havent understood yet what rasa actually is
+      - i want to about rasa
+      - i want to know about rasa
+      - i want to know what rasa does
+      - i want to learn something about rasa
+      - so how does it all work?
+      - sorry tell me about rasa
+      - tell me about rasa
+      - tell me bout rasa
+      - tell me more about rasa
+      - tell me more about your company
+      - what are the componensts of RASA
+      - what can I do with Rasa?
+      - what can i do with rasa
+      - what do you guys do at rasa
+      - what does rasa do
+      - what does rasa do ?
+      - what does rasa do?
+      - what does rasa mean
+      - what is rasa
+      - what is rasa?
+      - what is in rasa
+      - what is it for?
+      - what is rasa
+      - what is rasa actually
+      - what is rasa?
+      - whats rasa
+      - yeah go on explaining what rasa is
+      - RASA IS SOFTWARE?
+      - rasa os
+      - what is Rasa
