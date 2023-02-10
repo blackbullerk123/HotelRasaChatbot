@@ -197,3 +197,5 @@ class ActionAskTime(Action):
         dispatcher.utter_message(response="utter_ask_time", time=datetime.now().strftime("%d/%m/%Y %H:%M:%S"))
         
         return []
+
+

@@ -21,6 +21,7 @@ intents:
   - repeat_name
   - room_type_detail
   - ask_time
+  - ask_languagesbot
 responses:
   utter_greet_user:
     - text: Hey {name}! Can I help you?
@@ -78,6 +79,8 @@ responses:
     - text: ⛅⛈🌤🌩🌧🌨
   utter_ask_time:
     - text: "Now is {time}"
+  utter_ask_languagesbot:
+    - text: "Now I can only speak English."
 entities:
   - address
   - place_type

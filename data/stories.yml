@@ -99,3 +99,8 @@ stories:
     steps:
       - intent: ask_time
       - action: action_ask_time
+
+  - story: ask language bot
+    steps:
+      - intent: ask_languagesbot
+      - action: utter_ask_languagesbot

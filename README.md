@@ -23,7 +23,7 @@
         8. Ask datetime ✅
     6. About Rasa
         1. Ask Rasa
-        2. Ask Language Bot
+        2. Ask Language Bot ✅
         3. 'I am a bot' Challenge ✅
 
 
