@@ -20,7 +20,7 @@
         5. Ask Transportation
         6. Ask Weather ✅
         7. Ask name ✅
-        8. Ask time
+        8. Ask datetime ✅
     6. About Rasa
         1. Ask Rasa
         2. Ask Language Bot

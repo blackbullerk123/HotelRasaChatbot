@@ -94,3 +94,8 @@ stories:
       - slot_was_set:
           - address: New York
       - action: action_find_place
+
+  - story: ask time
+    steps:
+      - intent: ask_time
+      - action: action_ask_time
