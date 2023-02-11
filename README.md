@@ -6,7 +6,7 @@
     1. Greet ✅
     2. Room Booking 
         1. Handle date to find room available
-        2. inform email
+        2. inform email ✅
         3. inform phone number
     3. Feedback ✅
     4. Hotel Service

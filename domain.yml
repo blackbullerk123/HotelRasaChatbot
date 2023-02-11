@@ -1,147 +1,157 @@
-version: "3.1"
+version: '3.1'
 intents:
-  - affirm
-  - ask_availability
-  - ask_discount
-  - ask_hotel_faq
-  - ask_hotel_policy
-  - ask_weather
-  - book_room
-  - bot_challenge
-  - deny
-  - enter_number
-  - give_feed_back
-  - give_name
-  - giving_place_type
-  - goodbye
-  - greet
-  - hotel_introduction
-  - mood_great
-  - mood_unhappy
-  - repeat_name
-  - room_type_detail
-  - ask_datetime
-  - ask_languagesbot
-  - ask_whatisrasa
+- affirm
+- ask_availability
+- ask_datetime
+- ask_discount
+- ask_hotel_faq
+- ask_hotel_policy
+- ask_languagesbot
+- ask_weather
+- ask_whatisrasa
+- book_room
+- bot_challenge
+- deny
+- enter_number
+- give_feed_back
+- give_name
+- giving_place_type
+- goodbye
+- greet
+- hotel_introduction
+- inform_email
+- mood_great
+- mood_unhappy
+- repeat_name
+- room_type_detail
 responses:
   utter_greet_user:
-    - text: Hey {name}! Can I help you?
+  - text: Hey {name}! Can I help you?
   utter_greet_guest:
-    - text: Welcome! What's your name?
+  - text: Welcome! What's your name?
   utter_cheer_up:
-    - text: Here is something to cheer you up:'
-      image: https://i.imgur.com/nGF1K8f.jpg
+  - text: Here is something to cheer you up:'
+    image: https://i.imgur.com/nGF1K8f.jpg
   utter_did_that_help:
-    - text: Did that help you?
+  - text: Did that help you?
   utter_happy:
-    - text: Great, carry on!
+  - text: Great, carry on!
   utter_goodbye:
-    - text: Bye
+  - text: Bye
   utter_iamabot:
-    - text: I am a bot, powered by Rasa.
+  - text: I am a bot, powered by Rasa.
   utter_ask_name:
-    - text: What is your name?
+  - text: What is your name?
   utter_say_name:
-    - text: Your name is {name} 😎.
+  - text: Your name is {name} 😎.
   utter_cannot_say_name:
-    - text: I don't know your name.Looks like you haven't told me your name yet 🤔.
+  - text: I don't know your name.Looks like you haven't told me your name yet 🤔.
   utter_hotel_introduction:
-    - text: Okay. Tọa lạc tại địa chỉ 61-63 Hoàng Kế Viêm. Một trong những con đường sầm uất về du lịch và ẩm thực. Nằm trong khu các khách sạn và nhà nghỉ Đà Nẵng ven biển sầm uất nhất. Hanami mang một dáng vẻ sang trọng, hiện đại, một nét đẹp thanh nhã, hài hòa khiến bất cứ du khách nào khi đến Đà Nẵng cũng đều muốn ghé thăm. Nằm trên trục đường chính của tuyến phố phục vụ khách xuyên đêm An Thượng. Khách sạn Hanami Đà Nẵng sẽ đem đến cho quý khách cảm giác rộn ràng về một thành phố biển năng động. Ngoài ra, quý khách còn có thể tham gia nhiều lễ hội, sự kiện được tổ chức thường xuyên ở khu vực công viên biển.Với đội ngũ nhân viên tận tâm, nhiệt tình và chuyên nghiệp. Luôn sẵn lòng hỗ trợ để chuyến đi của du khách càng thêm đáng nhớ. Hanami cung cấp các dịch vụ cho thuê xe máy, mua vé và đặt tour bà nà các loại.
+  - text: Okay. Tọa lạc tại địa chỉ 61-63 Hoàng Kế Viêm. Một trong những con đường sầm uất về du lịch và ẩm thực. Nằm trong khu các khách sạn và nhà nghỉ Đà Nẵng ven biển sầm uất nhất. Hanami mang một dáng vẻ sang trọng, hiện đại, một nét đẹp thanh nhã, hài hòa khiến bất cứ du khách nào khi đến Đà Nẵng cũng đều muốn ghé thăm. Nằm trên trục đường chính của tuyến phố phục vụ khách xuyên đêm An Thượng. Khách sạn Hanami Đà Nẵng sẽ đem đến cho quý khách cảm giác rộn ràng về một thành phố biển năng động. Ngoài ra, quý khách còn có thể tham gia nhiều lễ hội, sự kiện được tổ chức thường xuyên ở khu vực công viên biển.Với đội ngũ nhân viên tận tâm, nhiệt tình và chuyên nghiệp. Luôn sẵn lòng hỗ trợ để chuyến đi của du khách càng thêm đáng nhớ. Hanami cung cấp các dịch vụ cho thuê xe máy, mua vé và đặt tour bà nà các loại.
   utter_can_book_room:
-    - text: Okay, {name}. Now we have single room & double room. Which room type do you want?
-      buttons:
-        - title: "single_room "
-        - title: "double_room "
+  - text: Okay, {name}. Now we have single room & double room. Which room type do you want?
+    buttons:
+    - title: 'single_room '
+    - title: 'double_room '
   utter_cannot_book_room:
-    - text: Sorry! There is no {room_type} available now! Please choose another room type or get back later!
+  - text: Sorry! There is no {room_type} available now! Please choose another room type or get back later!
   utter_avail_room:
-    - text: "We have: {avail_room}. Which room do you want?"
+  - text: 'We have: {avail_room}. Which room do you want?'
   utter_booking_form:
-    - text: You want to book {room_type} {room_id}?
+  - text: You want to book {room_type} {room_id}?
+  utter_input_email:
+  - text: Please tell me your email!
   utter_booking_success:
-    - text: Success! You cost {price}. Thank you! Do you want to preview the room?
+  - text: Success! You cost {price}. Thank you! Please check your booking form in your email {email}! Do you want to preview the room?
   utter_out_of_scope:
-    - text: Sorry, I can't handle that request.
+  - text: Sorry, I can't handle that request.
   utter_guide_direction:
-    - text: Okay, follow me 🤗
+  - text: Okay, follow me 🤗
   utter_room_type_detail:
-    - text: "{room_type} costs {price}. It's {description}."
+  - text: "{room_type} costs {price}. It's {description}."
   utter_ask_hotel_faq:
-    - text: Okay, there are some faq ...
+  - text: Okay, there are some faq ...
   utter_ask_hotel_policy:
-    - text: Okay, there are some policies ...
+  - text: Okay, there are some policies ...
   utter_receive_feedback:
-    - text: Okay, i will note your idea
+  - text: Okay, i will note your idea
   utter_find_place:
-    - text: Okay, finding {place_type} near {address}...
+  - text: Okay, finding {place_type} near {address}...
   utter_input_address:
-    - text: Please input your address
+  - text: Please input your address
   utter_ask_weather:
-    - text: ⛅⛈🌤🌩🌧🌨
+  - text: ⛅⛈🌤🌩🌧🌨
   utter_ask_time:
-    - text: "Now is {time}"
+  - text: Now is {time}
   utter_ask_languagesbot:
-    - text: "Now I can only speak English."
+  - text: Now I can only speak English.
   utter_ask_whatisrasa:
-    - text: "Rasa Open Source is a conversational AI framework for that provides machine learning tools for
-    building contextual assistants. You can read more about it here in the docs or on our
-    https://rasa.com/."
+  - text: Rasa Open Source is a conversational AI framework for that provides machine learning tools for building contextual assistants. You can read more about it here in the docs or on our https://rasa.com/.
 entities:
-  - address
-  - place_type
-  - name
-  - room_type
-  - room_id
+- email
+- name
+- room_id
+- room_type
+- address
+- place_type
 slots:
   name:
     type: text
     influence_conversation: true
     mappings:
-      - type: from_entity
-        entity: name
+    - type: from_entity
+      entity: name
   room_type:
     type: text
     influence_conversation: true
     mappings:
-      - type: from_entity
-        entity: room_type
+    - type: from_entity
+      entity: room_type
   room_id:
     type: text
     influence_conversation: true
     mappings:
-      - type: from_entity
-        entity: room_id
+    - type: from_entity
+      entity: room_id
   place_type:
     type: categorical
     influence_conversation: true
     mappings:
-      - type: from_entity
-        entity: place_type
-        intent: giving_place_type
+    - type: from_entity
+      entity: place_type
+      intent: giving_place_type
     values:
-      - restaurant
-      - coffee house
-      - shopping
-      - attraction
+    - restaurant
+    - coffee house
+    - shopping
+    - attraction
   address:
     type: text
     influence_conversation: true
     mappings:
-      - type: from_entity
-        entity: address
+    - type: from_entity
+      entity: address
+  email:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: email
 actions:
-  - action_ask_availability
-  - action_ask_discount
-  - action_book_room
-  - action_booking_form
-  - action_confirm_form_booking
-  - action_find_place
-  - action_greet
-  - action_room_type_detail
-  - action_say_name
-  - utter_guide_direction
-  - action_ask_time
-  - action_ask_datetime
+- action_ask_availability
+- action_ask_datetime
+- action_ask_discount
+- action_ask_time
+- action_book_room
+- action_booking_form
+- action_confirm_form_booking
+- action_find_place
+- action_greet
+- action_room_type_detail
+- action_say_name
+- utter_goodbye
+- utter_guide_direction
+- utter_input_email
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
