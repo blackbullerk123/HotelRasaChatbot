@@ -111,11 +111,15 @@ stories:
       - action: utter_input_email
       - intent: inform_email
         entities:
-          - email: lehuuthien_bibat@hahaha.com
+          - email: le.huu.thien.do.dien@hahaha.com
       - slot_was_set:
-          - email: lehuuthien_bibat@hahaha.com
+          - email: le.huu.thien.do.dien@hahaha.com
+      - action: utter_input_phone_number
+      - intent: inform_phone_number
+        entities:
+          - phone_number: "0113114115"
+      - slot_was_set:
+          - phone_number: "0113114115"
       - action: action_confirm_form_booking
       - intent: affirm
       - action: utter_guide_direction
-      - intent: goodbye
-      - action: utter_goodbye
