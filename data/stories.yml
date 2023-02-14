@@ -92,6 +92,15 @@ stories:
       - slot_was_set:
           - name: toan
       - intent: book_room
+      - action: utter_input_date
+      - intent: enter_date
+        entities:
+          - date_begin: 13-02-2023
+          - date_end: 14-02-2023
+      - slot_was_set:
+          - date_begin: 13-02-2023
+      - slot_was_set:
+          - date_end: 14-02-2023
       - action: action_book_room
       - intent: ask_availability
         entities:
@@ -111,15 +120,15 @@ stories:
       - action: utter_input_email
       - intent: inform_email
         entities:
-          - email: le.huu.thien.do.dien@hahaha.com
+          - email: dmt@gmail.com
       - slot_was_set:
-          - email: le.huu.thien.do.dien@hahaha.com
+          - email: dmt@gmail.com
       - action: utter_input_phone_number
       - intent: inform_phone_number
         entities:
-          - phone_number: "0113114115"
+          - phone_number: "0902666555"
       - slot_was_set:
-          - phone_number: "0113114115"
+          - phone_number: "0902666555"
       - action: action_confirm_form_booking
       - intent: affirm
       - action: utter_guide_direction

@@ -64,6 +64,9 @@ class ActionBookRoom(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         avail_rooms = []
+        date_begin = tracker.get_slot('date_begin')
+        date_end = tracker.get_slot('date_end')
+        print("Find room from",date_begin,"to",date_end)
         if (True):
             for i in range(len(room)):
                 if room[i]['status'] == 'avail':

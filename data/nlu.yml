@@ -91,10 +91,10 @@ nlu:
       - [juste](name)
       - [jenny](name)
       - I am [Toan](name)
-      - My name is [Toan](name)
-      - my name is [Toan](name)
-      - You can call me [Toan](name)
-      - [toan](name)
+      - My name is [Thien](name)
+      - my name is [Tuan](name)
+      - You can call me [Tri](name)
+      - [Huy](name)
       - [toan](name)
   - intent: goodbye
     examples: |
@@ -218,6 +218,8 @@ nlu:
       - [456](room_id)
       - [110](room_id)
       - [402](room_id)
+      - [503](room_id)
+      - [6732](room_id)
       - [402](room_id)
   - intent: out_of_scope
     examples: |
@@ -671,9 +673,12 @@ nlu:
       - [le.huu.thien.bi.hot@hahaha.com.vn](email)
       - [lehuuthien_bibat@hahaha.com](email)
       - [le.huu.thien.do.dien@hahaha.com](email)
+      - [dmt@gmail.com](email)
+      - [dmt@gmail.com](email)
   - intent: inform_phone_number
     examples: |
       - [0982237279](phone_number)
+      - [0115116117](phone_number)
       - [0979 165 561](phone_number)
       - [0395.287.283](phone_number)
       - [02488880147](phone_number)
@@ -704,6 +709,26 @@ nlu:
       - ok its [0813269669](phone_number)
       - here is my phone number: [090-552-0017](phone_number)
       - [0113114115](phone_number)
+      - [0905666307](phone_number)
+      - [0902666555](phone_number)
+  - intent: enter_date
+    examples: |
+      - [13-02-2023](date_begin) - [13-03-2023](date_end)
+      - from [1-1-2011](date_begin) to [21-12-2012](date_end)
+      - [6-05-2001](date_begin) to [23-12-2012](date_end)
+      - [06-5-2001](date_begin) and [22-8-2016](date_end)
+      - between [13-02-2023](date_begin) and [14-02-2023](date_end)
+      - [15/02/2023](date_begin) - [13/3/2023](date_end)
+      - from [1/1/2023](date_begin) to [25/7/2023](date_end)
+      - [6/05/2001](date_begin) to [23/12/2012](date_end)
+      - [06/5/2015](date_begin) and [22/9/2016](date_end)
+      - between [13/02/2023](date_begin) and [14/02/2023](date_end)
+      - [15.02.2023](date_begin) - [13.3.2023](date_end)
+      - from [1.1.2023](date_begin) to [25.7.2023](date_end)
+      - [6.05.2001](date_begin) to [23.12.2012](date_end)
+      - [06.5.2015](date_begin) and [22.9.2016](date_end)
+      - between [13.02.2023](date_begin) and [14.02.2023](date_end)
+      - [13-02-2023](date_begin) - [14-02-2023](date_end)
   - synonym: restaurant
     examples: |
       - restaurants
@@ -752,3 +777,6 @@ nlu:
       - Swimming Pool
       - Beach
       - museum
+  - regex: date
+    examples: |
+      - "(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}"
