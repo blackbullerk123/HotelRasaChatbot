@@ -64,6 +64,9 @@ class ActionBookRoom(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         avail_rooms = []
+        date_begin = tracker.get_slot('date_begin')
+        date_end = tracker.get_slot('date_end')
+        print("Find room from",date_begin,"to",date_end)
         if (True):
             for i in range(len(room)):
                 if room[i]['status'] == 'avail':
@@ -124,7 +127,8 @@ class ActionConfirmFormBooking(Action):
         
         print("action_confirm_form_booking")
         room_id = int(tracker.get_slot('room_id'))
-
+        email = tracker.get_slot('email')
+        phonenumber = tracker.get_slot('phone_number')
         print(room_id)
         price = 0
         for i in range(len(room)):
@@ -133,7 +137,7 @@ class ActionConfirmFormBooking(Action):
                 price = room_price[room[i]['room_type']]
                 print("booking", room[i]['room_type'], room_id, "success!")
                 print(room)
-                dispatcher.utter_message(response="utter_booking_success", price=price)
+                dispatcher.utter_message(response="utter_booking_success", price=price, email=email, phone_number=phonenumber)
                 break
      
         return []
