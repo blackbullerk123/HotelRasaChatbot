@@ -93,6 +93,9 @@ responses:
   - text: Please tell me your phone number!
   utter_input_date:
   - text: Please tell me the date...
+    custom: 
+      blocks: 
+      - type: dateQ
 entities:
 - email
 - date_begin

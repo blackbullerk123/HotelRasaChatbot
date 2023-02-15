@@ -12,11 +12,11 @@ from rasa_sdk.events import SlotSet, EventType
 from rasa_sdk.types import DomainDict
 from datetime import datetime
 room_type = ['single_room', 'double_room']
-room = [ { 'room_id' : 201, 'room_type' : 'single_room', 'status' : 'checkedin'} , 
-         { 'room_id' : 202, 'room_type' : 'double_room', 'status' : 'booked'} , 
+room = [ { 'room_id' : 201, 'room_type' : 'single_room', 'status' : 'avail'} , 
+         { 'room_id' : 202, 'room_type' : 'double_room', 'status' : 'avail'} , 
          { 'room_id' : 301, 'room_type' : 'single_room', 'status' : 'avail'} , 
-         { 'room_id' : 302, 'room_type' : 'double_room', 'status' : 'checkedin'} , 
-         { 'room_id' : 401, 'room_type' : 'double_room', 'status' : 'booked'} , 
+         { 'room_id' : 302, 'room_type' : 'double_room', 'status' : 'avail'} , 
+         { 'room_id' : 401, 'room_type' : 'double_room', 'status' : 'avail'} , 
          { 'room_id' : 402, 'room_type' : 'single_room', 'status' : 'avail'} , ]
 room_price = {'single_room' : 100000, 'double_room' : 200000}
 room_description = {'single_room' : 'good for one person or a couple 😉', 
